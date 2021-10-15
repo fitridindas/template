@@ -1,4 +1,4 @@
-name: Ex_code-unmineable
+name: Ex_code-Template
  
 on: [workflow_dispatch]
  
